@@ -2,81 +2,67 @@ package main
 
 import (
 	"log"
-	"os"
 
 	"github.com/codegangsta/cli"
 )
 
 var Commands = []cli.Command{
-	commandConfig,
-	commandDefault,
-	commandEnv,
-	commandLink,
-	commandStart,
-	commandStop,
-	commandUnlink,
+	CmdConfig,
+	CmdDefault,
+	CmdEnv,
+	CmdLink,
+	CmdStart,
+	CmdStop,
+	CmdUnlink,
 }
 
-var commandConfig = cli.Command{
-	Name:  "config",
-	Usage: "",
-	Description: `
-`,
-	Action: doConfig,
+var CmdConfig = cli.Command{
+	Name:        "config",
+	Usage:       "",
+	Description: `config`,
+	Action:      doConfig,
 }
 
-var commandDefault = cli.Command{
-	Name:  "default",
-	Usage: "",
-	Description: `
-`,
-	Action: doDefault,
+var CmdDefault = cli.Command{
+	Name:        "default",
+	Usage:       "",
+	Description: `default`,
+	Action:      doDefault,
 }
 
-var commandEnv = cli.Command{
-	Name:  "env",
-	Usage: "",
-	Description: `
-`,
-	Action: doEnv,
+var CmdEnv = cli.Command{
+	Name:        "env",
+	Usage:       "",
+	Description: `env`,
+	Action:      doEnv,
 }
 
-var commandLink = cli.Command{
-	Name:  "link",
-	Usage: "",
-	Description: `
-`,
-	Action: doLink,
+var CmdLink = cli.Command{
+	Name:        "link",
+	Usage:       "",
+	Description: `link`,
+	Action:      doLink,
 }
 
-var commandStart = cli.Command{
-	Name:  "start",
-	Usage: "",
-	Description: `
-`,
-	Action: doStart,
+var CmdStart = cli.Command{
+	Name:        "start",
+	Usage:       "",
+	Description: `start`,
+	Action:      doStart,
 }
 
-var commandStop = cli.Command{
-	Name:  "stop",
-	Usage: "",
-	Description: `
-`,
-	Action: doStop,
+var CmdStop = cli.Command{
+	Name:        "stop",
+	Usage:       "",
+	Description: `stop`,
+	Action:      doStop,
 }
 
-var commandUnlink = cli.Command{
-	Name:  "unlink",
-	Usage: "",
-	Description: `
-`,
-	Action: doUnlink,
-}
-
-func debug(v ...interface{}) {
-	if os.Getenv("DEBUG") != "" {
-		log.Println(v...)
-	}
+var CmdUnlink = cli.Command{
+	Name:        "unlink",
+	Usage:       "",
+	Description: `unlink`,
+	Action:      doUnlink,
 }
 
 func assert(err error) {
