@@ -4,9 +4,9 @@ import (
 	"io"
 	"net"
 
-	"github.com/codegangsta/cli"
 	"code.google.com/p/go.crypto/ssh"
 	log "github.com/Sirupsen/logrus"
+	"github.com/codegangsta/cli"
 )
 
 type clientPassword string
