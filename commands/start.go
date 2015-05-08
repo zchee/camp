@@ -11,19 +11,10 @@ import (
 
 type clientPassword string
 
-func (password clientPassword) Password(user string) (string, error) {
-	return string(password), nil
-}
-
 func cmdStart(c *cli.Context) {
 	username := c.String("username")
 	password := c.String("password")
 	localAddrString := c.String("local")
-
-	if len(c.Args()) == 0 {
-		cli.ShowCommandHelp(c, "rm")
-		log.Fatalf("You must specify a machine name")
-	}
 
 	// Setup SSH config (type *ssh.ClientConfig)
 	config := &ssh.ClientConfig{
@@ -40,17 +31,20 @@ func cmdStart(c *cli.Context) {
 	}
 
 	for {
-		log.Infof("Start forgo")
+		log.Infof("Start camp server")
+
 		// Setup localConn (type net.Conn)
 		localConn, err := localListener.Accept()
 		if err != nil {
-			log.WithFields(log.Fields{
-				"animal": "walrus",
-				"size":   10,
-			}).Fatalf("listen.Accept failed: %v", err)
+			log.Fatalf("listen.Accept failed: %v", err)
 		}
+
 		go forward(localConn, config, c)
 	}
+}
+
+func (password clientPassword) Password(user string) (string, error) {
+	return string(password), nil
 }
 
 func forward(localConn net.Conn, config *ssh.ClientConfig, c *cli.Context) {
