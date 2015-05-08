@@ -14,7 +14,7 @@ func GetDockerHost() string {
 		panic(err)
 	}
 	if dockerTcpHost == "" {
-		log.Fatalf("$DOCKER_HOST not found.")
+		log.Fatalf("Camp must have set a $DOCKER_HOST env.")
 	}
 	dockerHost := u.Host
 
