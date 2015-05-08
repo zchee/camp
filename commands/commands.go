@@ -3,6 +3,7 @@ package commands
 import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/codegangsta/cli"
+	"github.com/zchee/camp/utils"
 )
 
 var Commands = []cli.Command{
@@ -52,7 +53,7 @@ var Commands = []cli.Command{
 				EnvVar: "CAMP_SERVER",
 				Name:   "server, s",
 				Usage:  "Server Address",
-				Value:  "$DOCKER_HOST",
+				Value:  utils.GetDockerHost(),
 			},
 			cli.StringFlag{
 				EnvVar: "CAMP_LOCAL",
