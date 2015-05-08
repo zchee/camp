@@ -1,4 +1,4 @@
-# camp
+# Camp
 
 ## Description
 
@@ -6,11 +6,14 @@
 
 ## Install
 
-To install, use `go get`:
+To install only, use `go get`:
 
 ```bash
 $ go get -d github.com/zhee/camp
 ```
+
+> [The Go Programming Language](https://golang.org/cmd/go/)  
+> The -d flag instructs get to stop after downloading the packages; that is, it instructs get not to install the packages.
 
 ## Contribution
 
