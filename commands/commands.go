@@ -7,30 +7,30 @@ import (
 )
 
 var Commands = []cli.Command{
-	{
-		Name:        "config",
-		Usage:       "",
-		Description: `config`,
-		Action:      cmdConfig,
-	},
-	{
-		Name:        "default",
-		Usage:       "",
-		Description: `default`,
-		Action:      cmdDefault,
-	},
-	{
-		Name:        "env",
-		Usage:       "",
-		Description: `env`,
-		Action:      cmdEnv,
-	},
-	{
-		Name:        "link",
-		Usage:       "",
-		Description: `link`,
-		Action:      cmdLink,
-	},
+	//	{
+	//		Name:        "config",
+	//		Usage:       "",
+	//		Description: `config`,
+	//		Action:      cmdConfig,
+	//	},
+	//	{
+	//		Name:        "default",
+	//		Usage:       "",
+	//		Description: `default`,
+	//		Action:      cmdDefault,
+	//	},
+	//	{
+	//		Name:        "env",
+	//		Usage:       "",
+	//		Description: `env`,
+	//		Action:      cmdEnv,
+	//	},
+	//	{
+	//		Name:        "link",
+	//		Usage:       "",
+	//		Description: `link`,
+	//		Action:      cmdLink,
+	//	},
 	{
 		Name:        "start",
 		Usage:       "Start camp server.",
@@ -69,39 +69,22 @@ var Commands = []cli.Command{
 			},
 		},
 	},
-	{
-		Name:        "stop",
-		Usage:       "",
-		Description: `stop`,
-		Action:      cmdStop,
-	},
-	{
-		Name:        "unlink",
-		Usage:       "",
-		Description: `unlink`,
-		Action:      cmdUnlink,
-	},
+	//	{
+	//		Name:        "stop",
+	//		Usage:       "",
+	//		Description: `stop`,
+	//		Action:      cmdStop,
+	//	},
+	//	{
+	//		Name:        "unlink",
+	//		Usage:       "",
+	//		Description: `unlink`,
+	//		Action:      cmdUnlink,
+	//	},
 }
 
 func assert(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
-}
-func cmdConfig(c *cli.Context) {
-}
-
-func cmdDefault(c *cli.Context) {
-}
-
-func cmdEnv(c *cli.Context) {
-}
-
-func cmdLink(c *cli.Context) {
-}
-
-func cmdStop(c *cli.Context) {
-}
-
-func cmdUnlink(c *cli.Context) {
 }
