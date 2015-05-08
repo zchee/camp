@@ -70,11 +70,6 @@ var Commands = []cli.Command{
 		},
 	},
 	{
-		Name:   "start",
-		Usage:  "Start camp server",
-		Action: cmdStart,
-	},
-	{
 		Name:        "stop",
 		Usage:       "",
 		Description: `stop`,
